@@ -1,0 +1,25 @@
+DROP DATABASE IF EXISTS cms;
+CREATE DATABASE cms;
+
+USE cms;
+
+CREATE TABLE department (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE roles (
+   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+   position VARCHAR(50) NOT NULL,
+   salary INT NOT NULL
+   department_id INT NOT NULL,
+   FOREIGN KEY (department_id)
+   REFERENCES department(id)
+   ON DELETE SET NULL
+);
+
+CREATE TABLE employee (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+);
