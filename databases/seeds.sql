@@ -1,9 +1,11 @@
+-- Department table inputs
 INSERT INTO department (name)
 VALUES ("Support"),
         ("Service"),
         ("Sales"),
         ("Buisness Office");
 
+-- Position table inputs
 INSERT INTO roles (position, salary, department_id)
 VALUES ("Support Specialist",40000,1),
         ("Technician",60000,2),
@@ -16,6 +18,7 @@ VALUES ("Support Specialist",40000,1),
 --         ("Jen","Gill",4),
 --         ("Paul","Brown",2);
 
+-- Employee Table inputs
 INSERT INTO employee (first_name,last_name,roles_id,manager_id)
 VALUES ("Sam","James",1,NULL),
         ("Vic","Williams",2,NULL),

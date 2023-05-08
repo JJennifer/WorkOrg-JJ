@@ -2,6 +2,7 @@ const express = require("express");
 const mysql = require("mysql2");
 const inquirer = require("inquirer");
 const chart = require("console.table")
+require('dotenv').config();
 
 const PORT = process.env.PORT || 4003;
 const app = express();
@@ -13,7 +14,7 @@ const database = mysql.createConnection(
   {
     host: 'localhost',
     user: 'root',
-    password: "10171017",
+    password: process.env.PASSWORD,
     database: 'cms'
   },
   console.log(`Connected to cms database.`)
@@ -160,6 +161,7 @@ const addRole = () => {
         })
     })
 };
+
 
 const addEmployee = ()=>{
     inquirer.prompt([
